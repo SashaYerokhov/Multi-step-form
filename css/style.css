@@ -568,6 +568,34 @@ input:-webkit-autofill:focus {
   font-size: 18px;
   color: var(--marine-blue);
 }
+/* Thank you */
+.card__block-tanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 435px;
+  padding: 0;
+  margin: 0;
+  margin-block-start: 105px;
+}
+
+.card__block-tanks img {
+  display: block;
+  margin-block-end: 33px;
+}
+
+.card__block-tanks h4 {
+  color: var(--marine-blue);
+  font-weight: 700;
+  margin-block-end: 20px;
+}
+
+.card__block-tanks p {
+  color: var(--cool-gray);
+  line-height: 1.5;
+  text-align: center;
+}
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -575,4 +603,22 @@ input:-webkit-autofill:focus {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+@media (max-width: 780px) {
+  .card {
+    flex-direction: column;
+  }
+  .card__left-box {
+    top: 30px;
+    left: 95px;
+    display: flex;
+    gap: 15px;
+  }
+  .card__left-text {
+    display: none;
+  }
+
+  .card__right {
+    top: -72px;
+  }
 }
