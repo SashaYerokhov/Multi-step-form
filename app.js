@@ -39,84 +39,89 @@ function updateNumber() {
   });
 }
 // cardBlocks[cardBlockIndex].classList.add("card__block-active");
-btnsNext.forEach((btnNext) => {
-  btnNext.addEventListener("click", () => {
-    if (formStepIndex === 0) {
-      if (validateForm) {
-        cardBlocks[cardBlockIndex].classList.remove("card__block-active");
-        cardBlockIndex++;
-        updateNumber();
-      }
-      cardBlocks[cardBlockIndex].classList.add("card__block-active");
-    }
-    if (formStepIndex === 1) {
-      if (selectCard) {
-        cardBlocks[cardBlockIndex].classList.remove("card__block-active");
-        cardBlockIndex++;
-        updateNumber();
-      }
-      cardBlocks[cardBlockIndex].classList.add("card__block-active");
-    }
-    if (formStepIndex === 2) {
-      if (cardChecked)
-        cardBlocks[cardBlockIndex].classList.remove("card__block-active");
-      cardBlockIndex++;
+// btnsNext.forEach((btnNext) => {
+//   btnNext.addEventListener("click", () => {
+//     if (formStepIndex === 0) {
+//       if (validateForm) {
+//         cardBlocks[cardBlockIndex].classList.remove("card__block-active");
+//         cardBlockIndex++;
+//         updateNumber();
+//       }
+//       cardBlocks[cardBlockIndex].classList.add("card__block-active");
+//     }
+//     if (formStepIndex === 1) {
+//       if (selectCard) {
+//         cardBlocks[cardBlockIndex].classList.remove("card__block-active");
+//         cardBlockIndex++;
+//         updateNumber();
+//       }
+//       cardBlocks[cardBlockIndex].classList.add("card__block-active");
+//     }
+//     if (formStepIndex === 2) {
+//       if (cardChecked)
+//         cardBlocks[cardBlockIndex].classList.remove("card__block-active");
+//       cardBlockIndex++;
+//       updateNumber();
+//     }
+//     cardBlocks[cardBlockIndex].classList.add("card__block-active");
+//     if (formStepIndex === 3) {
+//     }
+//   });
+// });
+
+
+// Переход к предыдущему шагу
+// btnsBack.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     cardBlockIndex--;
+//     showCard(cardBlockIndex);
+//   });
+// });
+
+/**
+ * Добрый день! Есть секция из 5 блоков на первом блоке кнопка Next, на 2-м блоке появляется кнопка Go Back
+ * и затем дальше на каждом блоке кнопка Next и Go Back, на 4-м блоке уже вместо кнопки
+ * вперед - кнопка Confirm. Есть скрипт для кнопки Next, как сделать кнопку Go Back. Почему не работает?
+ *
+ */
+
+// Ответ ДипСик
+// Обработчик для кнопок "Go Back"
+btnsBack.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (cardBlockIndex > 0) { // Проверяем, чтобы не уйти в минус
+      cardBlocks[cardBlockIndex].classList.remove("card__block-active");
+      cardBlockIndex--;
+      formStepIndex--; // Обновляем индекс шага формы
       updateNumber();
-    }
-    cardBlocks[cardBlockIndex].classList.add("card__block-active");
-    if (formStepIndex === 3) {
+      cardBlocks[cardBlockIndex].classList.add("card__block-active");
     }
   });
 });
-// btnsNext.forEach((btnNext) => {
-//   btnNext.addEventListener("click", () => {
-//     // Проверяем условия перед переходом
-//     if (formStepIndex === 0 && !validateForm()) return; // Пример валидации
-//     if (formStepIndex === 1 && !selectCard) return; // Пример проверки выбора плана
-
-//     // Скрываем текущую секцию
-//     cardBlocks[cardBlockIndex].classList.remove("card__block-active");
-
-//     // Увеличиваем индекс, но не выходим за пределы
-//     if (cardBlockIndex < cardBlocks.length - 1) {
-//       cardBlockIndex++;
-//       formStepIndex++; // Если formStepIndex синхронизирован
-//       updateNumber(); // Обновляем UI (если нужно)
-//     }
-
-//     // Показываем следующую секцию
-//     cardBlocks[cardBlockIndex].classList.add("card__block-active");
-//   });
-// });
-
-// Показать текущий шаг формы
-// function showCard(card) {
-//   cardBlocks.forEach((cardBlock, index) => {
-//     cardBlock.classList.remove("card__block-active");
-//     if (index === card) {
-//       cardBlock.classList.add("card__block-active");
-//     }
-//   });
-// }
-
-// Переход к следующему шагу
-// btnsNext.forEach((btn, index) => {
-//   btn.addEventListener("click", () => {
-//     if (validateForm(index)) {
-//       cardBlockIndex++;
-//       showCard(cardBlockIndex);
-//     } else if (selectCard(index)) {
-//       cardBlockIndex++;
-//       showCard(cardBlockIndex);
-//     }
-//   });
-// });
-
-// Переход к предыдущему шагу
-btnsBack.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    cardBlockIndex--;
-    showCard(cardBlockIndex);
+// Обработчик для кнопок "Next"
+btnsNext.forEach((btnNext) => {
+  btnNext.addEventListener("click", () => {
+    let canProceed = false;
+    
+    // Проверки для каждого шага
+    if (formStepIndex === 0) {
+      canProceed = validateForm;
+    } else if (formStepIndex === 1) {
+      canProceed = selectCard;
+    } else if (formStepIndex === 2) {
+      canProceed = cardChecked;
+    } else if (formStepIndex === 3) {
+      canProceed = true; // Для последнего шага проверка не нужна
+    }
+    
+    // Если можно перейти дальше
+    if (canProceed && cardBlockIndex < cardBlocks.length - 1) {
+      cardBlocks[cardBlockIndex].classList.remove("card__block-active");
+      cardBlockIndex++;
+      formStepIndex++;
+      updateNumber();
+      cardBlocks[cardBlockIndex].classList.add("card__block-active");
+    }
   });
 });
 

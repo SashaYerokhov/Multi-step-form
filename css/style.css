@@ -18,7 +18,7 @@
 html,
 body {
   overflow: auto;
-  height: auto;
+  height: 100%;
 }
 html {
   box-sizing: border-box;
@@ -33,7 +33,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Ubuntu";
-  font-size: 100%;
+  font-size: 1rem;
   font-weight: 400;
   background: var(--magnolia);
 }
@@ -58,10 +58,6 @@ p {
   gap: 100px;
   position: relative;
 }
-/* .card__left {
-} */
-/* .card__left-images {
-} */
 .card__left-box {
   position: absolute;
   top: 50px;
@@ -88,8 +84,6 @@ p {
   background-color: var(--light-blue);
   color: var(--marine-blue);
 }
-/* .card__left-text {
-} */
 .card_left-step {
   color: var(--light-gray);
   text-transform: uppercase;
@@ -109,6 +103,12 @@ p {
   padding-block-start: 45px;
   display: none;
   transition: opacity 0.3s, transform 0.3s;
+}
+.card__block:not(.card__block-active) {
+  opacity: 0;
+  transform: translateX(20px);
+  pointer-events: none;
+  position: absolute;
 }
 /* для того чтобы прижать кнопки к низу */
 form,
@@ -251,6 +251,9 @@ input:-webkit-autofill:focus {
   }
 }
 
+.confirm {
+  background-color: var(--purplish-blue);
+}
 /* Step 2 - Toggle */
 .card__title {
   font-size: 40px;
@@ -279,7 +282,7 @@ input:-webkit-autofill:focus {
   border-radius: 10px;
   padding-left: 15px;
   padding-top: 20px;
-  margin-bottom: 30px;
+  margin-block-end: 30px;
   cursor: pointer;
   transition: border 350ms ease-in;
   &:hover {
@@ -321,7 +324,7 @@ input:-webkit-autofill:focus {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  /* margin-bottom: 110px; */
+  border-radius: 8px;
 }
 .plan__toggle label {
   width: 38px;
@@ -352,10 +355,8 @@ input:-webkit-autofill:focus {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  /* margin-bottom: 80px; */
 }
 .card__add-block {
-  /* position: relative; */
   height: 80px;
   width: 450px;
   border: 2px solid var(--light-gray);
@@ -364,8 +365,12 @@ input:-webkit-autofill:focus {
   padding-block: 20px;
   display: flex;
   align-items: center;
-  /* flex-grow: 1; */
   gap: 20px;
+  cursor: pointer;
+  transition: border-color 450ms ease-in-out;
+  &:hover {
+    border-color: var(--purplish-blue);
+  }
 }
 
 /* Стилизуем label */
@@ -397,11 +402,6 @@ input:-webkit-autofill:focus {
   border-radius: 3px;
 }
 
-/* Стилизуем <span> в состоянии hover и в состоянии checked: */
-/* .card__add-check:hover input ~ .checkmark {
-  background-color: var(--pastel-blue);
-} */
-
 .card__add-check input:checked ~ .checkmark {
   background-color: var(--purplish-blue);
 }
@@ -431,37 +431,6 @@ input:-webkit-autofill:focus {
   border-color: var(--purplish-blue);
   background-color: var(--magnolia);
 }
-/* .cartCheck {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-} */
-
-/* .cartCheck + label {
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  user-select: none;
-} */
-
-/* .cartCheck + label::before {
-  content: '';
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  flex-grow: 0;
-  border: 1px solid var(--cool-gray);
-  border-radius: 3px;
-  margin-right: 0.5em;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% 100%;
-} */
-
-/* .cartCheck:checked + label::before {
-  background-color: var(--purplish-blue);
-  background-image: url('../assets/images/icon-checkmark.svg');
-} */
 .card__add-conditions p:first-child {
   color: var(--marine-blue);
   font-weight: 700;
@@ -494,11 +463,18 @@ input:-webkit-autofill:focus {
   justify-content: space-between;
   margin-block-end: 16px;
   padding-block-end: 24px;
-  border-bottom: 1px solid var(--cool-gray);
+  border-bottom: 1px solid rgba(150, 153, 170, 0.2);
 }
 .arcade-name {
   display: flex;
   flex-direction: column;
+  row-gap: 7px;
+}
+.arcade-name a {
+  transition: color 450ms ease;
+  &:hover {
+    color: var(--purplish-blue);
+  }
 }
 .arcade-name__wrap {
   display: flex;
@@ -554,14 +530,13 @@ input:-webkit-autofill:focus {
   align-items: center;
   justify-content: space-between;
 }
-/* #selected-plan-name {
-  width: 180px;
-}
-#selected-plan-price {
-  width: 50px;
-} */
 .card__summary-service {
   margin-block-end: 16px;
+}
+.selected-plans-grid,
+.card__summary-total p,
+.card__summary-total span {
+  color: var(--cool-gray);
 }
 .total-price {
   font-weight: 600;
@@ -582,18 +557,20 @@ input:-webkit-autofill:focus {
 
 .card__block-tanks img {
   display: block;
-  margin-block-end: 33px;
+  margin-block-end: 32px;
 }
 
 .card__block-tanks h4 {
   color: var(--marine-blue);
+  font-size: 2rem;
   font-weight: 700;
-  margin-block-end: 20px;
+  text-align: center;
+  margin-block-end: 14px;
 }
 
 .card__block-tanks p {
   color: var(--cool-gray);
-  line-height: 1.5;
+  line-height: 156%;
   text-align: center;
 }
 .attribution {
@@ -605,8 +582,15 @@ input:-webkit-autofill:focus {
   color: hsl(228, 45%, 44%);
 }
 @media (max-width: 780px) {
+  html,
+  body {
+    height: 100%;
+  }
   .card {
+    margin: 0;
     flex-direction: column;
+    background: var(--magnolia);
+    gap: 0;
   }
   .card__left-box {
     top: 30px;
@@ -620,5 +604,117 @@ input:-webkit-autofill:focus {
 
   .card__right {
     top: -72px;
+    /* height: 100%; */
+  }
+  .card__block {
+    padding-block-start: 0;
+    border-radius: 10px;
+  }
+  .card__right .card__block-active {
+    /* justify-content: space-between; */
+  }
+  .card__block-title {
+    background: var(--white);
+    padding: 22px 24px;
+  }
+  .card__block-title .card__title {
+    font-size: 24px;
+    margin-block-end: 9px;
+  }
+  .card__block-title .card__provide {
+    font-size: 16px;
+    margin-block-end: 0;
+  }
+  form {
+    padding-inline: 24px;
+  }
+  form,
+  .card__plan,
+  .card__add,
+  .card__summary-wrapper:has(.card__block) {
+    height: 100%;
+    flex: 1 0 auto;
+  }
+  .input__fields {
+    margin-block-end: 16px;
+  }
+  .input__fields input[type="text"],
+  .input__fields input[type="email"],
+  .input__fields input[type="tel"] {
+    width: 100%;
+  }
+  .buttons__card {
+    flex: 0 0 auto;
+    background: var(--white);
+    height: 72px;
+    padding-inline: 16px;
+  }
+  .btn-next {
+    width: 97px;
+    height: 40px;
+  }
+  .card__plan {
+    background: var(--white);
+  }
+  .card__plan-cart {
+    grid-template-columns: 295px;
+    gap: 12px 0;
+    margin-block-end: 24px;
+  }
+  .card__plan-selection {
+    display: flex;
+    align-items: center;
+    column-gap: 14px;
+    min-height: 99px;
+    padding-block: 14px 17px;
+    margin-block-end: 0;
+  }
+  .card__add {
+    background: var(--white);
+  }
+  .card__add-block {
+    width: 100%;
+    height: 62px;
+  }
+  .card__add-title {
+    font-size: 0.875rem;
+  }
+  .card__add-text {
+    font-size: 0.75rem;
+  }
+  .card__summary {
+    background: var(--alabaster);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  :is(
+      .arcade-name__wrap p,
+      .arcade-name__wrap span,
+      .selected-plans-grid,
+      .card__summary-total p,
+      .card__summary-total span
+    ) {
+    font-size: 0.875rem;
+  }
+  .total-price {
+    font-size: 1rem;
+  }
+  .card__block-tanks {
+    background: var(--white);
+    height: 400px;
+    width: 343px;
+    position: absolute;
+    top: -107px;
+    left: 12px;
+    padding-inline: 24px;
+    border-radius: 10px;
+    box-shadow: 0 25px 40px -20px rgba(0, 0, 0, 0.1);
+  }
+  .card__block-tanks img {
+    margin-block-end: 24px;
+  }
+  .card__block-tanks h4 {
+    font-size: 1.5rem;
+    margin-block-end: 9px;
   }
 }
