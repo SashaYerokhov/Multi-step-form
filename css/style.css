@@ -48,29 +48,29 @@ p {
   margin: 0;
 }
 .card {
-  max-width: 940px;
-  min-height: 600px;
-  margin: 105px auto;
+  max-width: 58.75rem;
+  min-height: 37.5rem;
+  margin: 6.5625rem auto;
   padding: 15px;
   background-color: var(--white);
   border-radius: 10px;
   display: flex;
-  gap: 100px;
+  gap: 6.25rem;
   position: relative;
 }
 .card__left-box {
   position: absolute;
-  top: 50px;
-  left: 45px;
+  top: 3.125rem;
+  left: 2.8125rem;
 }
 .card__left-info {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 30px;
+  gap: 0.9375rem;
+  margin-block-end: 1.875rem;
 }
 .card__left-number {
-  width: 35px;
+  width: 2.1875rem;
   height: 35px;
   border: 1px solid var(--white);
   color: var(--white);
@@ -100,7 +100,7 @@ p {
 .card__block {
   min-height: 100%;
   flex-direction: column;
-  padding-block-start: 45px;
+  padding-block-start: 2.8125rem;
   display: none;
   transition: opacity 0.3s, transform 0.3s;
 }
@@ -128,14 +128,14 @@ form,
 }
 
 .card__block-title .card__title {
-  font-size: 40px;
+  font-size: 2.5rem;
   color: var(--marine-blue);
-  margin-block: 0 20px;
+  margin-block: 0 1.25rem;
 }
 .card__block-title .card__provide {
   color: var(--cool-gray);
   line-height: 156%;
-  margin-block: 0 30px;
+  margin-block: 0 1.875rem;
 }
 
 form {
@@ -143,7 +143,7 @@ form {
 }
 
 .input__fields {
-  margin-block-end: 25px;
+  margin-block-end: 1.5625rem;
 }
 .label-form {
   display: flex;
@@ -152,7 +152,7 @@ form {
 .input__fields label {
   display: inline-block;
   color: var(--marine-blue);
-  margin-block-end: 10px;
+  margin-block-end: 0.625rem;
 }
 
 .input__fields .error-input {
@@ -168,9 +168,9 @@ form {
 .input__fields input[type="tel"] {
   display: block;
   border: 1px solid var(--light-blue);
-  width: 450px;
-  height: 45px;
-  padding-inline-start: 13px;
+  width: 28.125rem;
+  height: 2.8125rem;
+  padding-inline-start: 0.8125rem;
   border-radius: 10px;
   cursor: pointer;
   transition: border-color 0.4s ease;
@@ -235,8 +235,8 @@ input:-webkit-autofill:focus {
   font-weight: 700;
 }
 .btn-next {
-  width: 125px;
-  height: 45px;
+  width: 7.8125rem;
+  height: 2.8125rem;
   border: none;
   display: flex;
   align-items: center;
@@ -256,13 +256,13 @@ input:-webkit-autofill:focus {
 }
 /* Step 2 - Toggle */
 .card__title {
-  font-size: 40px;
+  font-size: 2.5rem;
   color: var(--marine-blue);
-  margin-block: 0 20px;
+  margin-block: 0 1.25rem;
 }
 .card__provide {
   color: var(--light-gray);
-  margin-block: 0 30px;
+  margin-block: 0 1.875rem;
 }
 .card__plan {
   display: flex;
@@ -274,15 +274,14 @@ input:-webkit-autofill:focus {
 .card__plan-cart {
   display: grid;
   grid-template-columns: repeat(3, 135px);
-  column-gap: 20px;
+  column-gap: 1.25rem;
 }
 .card__plan-selection {
-  min-height: 180px;
+  min-height: 11.25rem;
   border: 1px solid var(--light-blue);
   border-radius: 10px;
-  padding-left: 15px;
-  padding-top: 20px;
-  margin-block-end: 30px;
+  padding: 1.25rem 0 0 0.9375rem;
+  margin-block-end: 1.875rem;
   cursor: pointer;
   transition: border 350ms ease-in;
   &:hover {
@@ -295,54 +294,52 @@ input:-webkit-autofill:focus {
 }
 .card__plan- .card__plan-selection img {
   display: block;
-  margin-bottom: 45px;
+  margin-block-end: 2.8125rem;
 }
 .card__plan-info {
   display: flex;
   flex-direction: column;
 }
 .card__plan-name {
-  margin-bottom: 10px;
+  margin-block-end: 0.625rem;
 }
 .card__plan-month {
-  margin-bottom: 10px;
+  margin-block-end: 0.625rem;
   color: var(--cool-gray);
 }
 .card__plan-year {
   display: none;
-  margin-bottom: 10px;
+  margin-block-end: 0.625rem;
   color: var(--cool-gray);
 }
 .card__plan-free {
   display: none;
 }
 .plan__toggle {
-  height: 48px;
+  height: 3rem;
   background-color: var(--alabaster);
-  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 0.625rem;
   border-radius: 8px;
 }
 .plan__toggle label {
-  width: 38px;
-  height: 20px;
+  width: 2.375rem;
+  height: 1.25rem;
   background: var(--marine-blue);
   border-radius: 40px;
-  padding: 4px 4px;
+  padding: 0.25rem 0.25rem;
   margin-block-end: 0;
   cursor: pointer;
 }
-/* .montly {
-} */
+
 .toggle-input {
   display: none;
 }
 .toggle-switch {
-  width: 12px;
-  height: 12px;
+  width: 0.75rem;
+  height: 0.75rem;
   background: var(--white);
   border-radius: 50%;
   transition: all 0.5s ease;
@@ -357,12 +354,11 @@ input:-webkit-autofill:focus {
   gap: 15px;
 }
 .card__add-block {
-  height: 80px;
-  width: 450px;
+  height: 5rem;
+  width: 28.125rem;
   border: 2px solid var(--light-gray);
   border-radius: 8px;
-  padding-left: 15px;
-  padding-block: 20px;
+  padding: 20px 0 20px 15px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -377,8 +373,8 @@ input:-webkit-autofill:focus {
 .card__add-check {
   display: block;
   position: relative;
-  padding-left: 20px;
-  margin-bottom: 12px;
+  padding-inline: 1.25rem;
+  margin-block-end: 0.75rem;
   cursor: pointer;
   font-size: 16px;
   user-select: none;
@@ -396,8 +392,8 @@ input:-webkit-autofill:focus {
   position: absolute;
   top: 0;
   left: 0;
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   border: 2px solid var(--cool-gray);
   border-radius: 3px;
 }
@@ -417,10 +413,10 @@ input:-webkit-autofill:focus {
 }
 
 .card__add-check .checkmark::after {
-  left: 7px;
-  top: 4px;
-  width: 5px;
-  height: 10px;
+  left: 0.4375rem;
+  top: 0.25rem;
+  width: 0.3125rem;
+  height: 0.625rem;
   border: solid var(--white);
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
@@ -434,7 +430,7 @@ input:-webkit-autofill:focus {
 .card__add-conditions p:first-child {
   color: var(--marine-blue);
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-block-end: 0.625rem;
 }
 .card__add-conditions p:last-child {
   color: var(--cool-gray);
@@ -442,7 +438,7 @@ input:-webkit-autofill:focus {
 .card__add-price {
   color: var(--purplish-blue);
   margin-left: auto;
-  margin-right: 20px;
+  margin-inline-end: 1.25rem;
 }
 
 .card__add.yearly {
@@ -453,16 +449,16 @@ input:-webkit-autofill:focus {
 .card__summary {
   background-color: var(--magnolia);
   border-radius: 8px;
-  min-height: 180px;
-  padding: 20px;
-  margin-block-end: 24px;
+  min-height: 11.25rem;
+  padding: 1.25rem;
+  margin-block-end: 1.5rem;
 }
 .card__summary-arcade {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-block-end: 16px;
-  padding-block-end: 24px;
+  margin-block-end: 1rem;
+  padding-block-end: 1.5rem;
   border-bottom: 1px solid rgba(150, 153, 170, 0.2);
 }
 .arcade-name {
@@ -480,11 +476,11 @@ input:-webkit-autofill:focus {
   display: flex;
   align-items: center;
   color: var(--marine-blue);
-  margin-block: 0 5px;
+  margin-block: 0 0.3125rem;
 }
 .arcade-name p {
   font-weight: 700;
-  padding-inline-end: 5px;
+  padding-inline-end: 0.3125rem;
 }
 
 .arcade-price {
@@ -492,7 +488,7 @@ input:-webkit-autofill:focus {
 }
 .card__summary-larger {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Две колонки */
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 .selected-plans-grid {
@@ -505,7 +501,7 @@ input:-webkit-autofill:focus {
 .grid-header {
   font-weight: bold;
   border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
+  padding-inline-end: 0.3125rem;
 }
 
 #selected-plan-items {
@@ -518,7 +514,7 @@ input:-webkit-autofill:focus {
 
 .plan-name,
 .plan-price {
-  padding: 5px 0;
+  padding: 0.3125rem 0;
 }
 
 .plan-price {
@@ -531,7 +527,7 @@ input:-webkit-autofill:focus {
   justify-content: space-between;
 }
 .card__summary-service {
-  margin-block-end: 16px;
+  margin-block-end: 1rem;
 }
 .selected-plans-grid,
 .card__summary-total p,
@@ -540,7 +536,7 @@ input:-webkit-autofill:focus {
 }
 .total-price {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--purplish-blue);
 }
 /* Thank you */
@@ -549,15 +545,15 @@ input:-webkit-autofill:focus {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 435px;
+  max-width: 27.1875rem;
   padding: 0;
   margin: 0;
-  margin-block-start: 105px;
+  margin-block-start: 6.5625rem;
 }
 
 .card__block-tanks img {
   display: block;
-  margin-block-end: 32px;
+  margin-block-end: 2rem;
 }
 
 .card__block-tanks h4 {
@@ -565,7 +561,7 @@ input:-webkit-autofill:focus {
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
-  margin-block-end: 14px;
+  margin-block-end: 0.875rem;
 }
 
 .card__block-tanks p {
@@ -574,7 +570,7 @@ input:-webkit-autofill:focus {
   text-align: center;
 }
 .attribution {
-  font-size: 11px;
+  font-size: 0.6875rem;
   text-align: center;
   font-style: italic;
 }
@@ -593,8 +589,8 @@ input:-webkit-autofill:focus {
     gap: 0;
   }
   .card__left-box {
-    top: 30px;
-    left: 95px;
+    top: 1.875rem;
+    left: 5.9375rem;
     display: flex;
     gap: 15px;
   }
@@ -603,7 +599,7 @@ input:-webkit-autofill:focus {
   }
 
   .card__right {
-    top: -72px;
+    top: -4.5rem;
   }
   .card__block {
     min-height: 100vh;
@@ -611,20 +607,20 @@ input:-webkit-autofill:focus {
   }
   .card__block-title {
     background: var(--white);
-    padding: 22px 24px;
+    padding: 1.375rem 1.5rem;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
   .card__block-title .card__title {
-    font-size: 24px;
-    margin-block-end: 9px;
+    font-size: 1.5rem;
+    margin-block-end: 0.5625rem;
   }
   .card__block-title .card__provide {
-    font-size: 16px;
+    font-size: 1rem;
     margin-block-end: 0;
   }
   form {
-    padding-inline: 24px;
+    padding-inline: 1.5rem;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
   }
@@ -639,27 +635,27 @@ input:-webkit-autofill:focus {
   .buttons__card {
     margin-block-start: auto;
     background: var(--white);
-    height: 72px;
-    padding-inline: 16px;
+    height: 4.5rem;
+    padding-inline: 1rem;
   }
   .btn-next {
-    width: 97px;
-    height: 40px;
+    width: 6.0625rem;
+    height: 2.5rem;
   }
   .card__plan {
     background: var(--white);
   }
   .card__plan-cart {
-    grid-template-columns: 295px;
-    gap: 12px 0;
-    margin-block-end: 24px;
+    grid-template-columns: 18.4375rem;
+    gap: 0.75rem 0;
+    margin-block-end: 1.5rem;
   }
   .card__plan-selection {
     display: flex;
     align-items: center;
     column-gap: 14px;
-    min-height: 99px;
-    padding-block: 14px 17px;
+    min-height: 6.1875rem;
+    padding-block: 0.875rem 1.0625rem;
     margin-block-end: 0;
   }
   .card__add {
@@ -667,7 +663,7 @@ input:-webkit-autofill:focus {
   }
   .card__add-block {
     width: 100%;
-    height: 62px;
+    height: 3.875rem;
   }
   .card__add-title {
     font-size: 0.875rem;
@@ -678,7 +674,7 @@ input:-webkit-autofill:focus {
   .card__summary {
     background: var(--alabaster);
     border-radius: 8px;
-    padding: 16px;
+    padding: 1rem;
   }
   :is(
       .arcade-name__wrap p,
@@ -694,20 +690,20 @@ input:-webkit-autofill:focus {
   }
   .card__block-tanks {
     background: var(--white);
-    height: 400px;
-    width: 343px;
+    height: 25rem;
+    width: 21.4375rem;
     position: absolute;
-    top: -107px;
-    left: 12px;
-    padding-inline: 24px;
+    top: -6.6875rem;
+    left: 0.75rem;
+    padding-inline: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 25px 40px -20px rgba(0, 0, 0, 0.1);
   }
   .card__block-tanks img {
-    margin-block-end: 24px;
+    margin-block-end: 1.5rem;
   }
   .card__block-tanks h4 {
     font-size: 1.5rem;
-    margin-block-end: 9px;
+    margin-block-end: 0.5625rem;
   }
 }
