@@ -110,7 +110,6 @@ p {
   pointer-events: none;
   position: absolute;
 }
-/* для того чтобы прижать кнопки к низу */
 form,
 .card__plan,
 .card__add,
@@ -198,12 +197,7 @@ input:focus,
 .error-block .error-input {
   opacity: 1;
 }
-/* .error-input {
-  border: 2px solid var(--strawberry-red);
-} */
 
-/* для того чтобы, после ввода данных
-в инпуте цвет плейсхолдера - был белый */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
@@ -380,14 +374,12 @@ input:-webkit-autofill:focus {
   user-select: none;
 }
 
-/* Скрываем стандартный <input>: */
 .card__add-check input {
   position: absolute;
   z-index: -1;
   opacity: 0;
 }
 
-/* Рисуем кастомный checkbox в <span>: */
 .checkmark {
   position: absolute;
   top: 0;
@@ -422,7 +414,6 @@ input:-webkit-autofill:focus {
   transform: rotate(45deg);
 }
 
-/* применить стили к блоку при включеном чекбоксе */
 .card__add-block.active:has(.card__add-check input:checked) {
   border-color: var(--purplish-blue);
   background-color: var(--magnolia);
@@ -493,7 +484,7 @@ input:-webkit-autofill:focus {
 }
 .selected-plans-grid {
   display: grid;
-  grid-template-columns: 1fr auto; /* Название растягивается, цена — по содержимому */
+  grid-template-columns: 1fr auto;
   gap: 10px;
   align-items: center;
   margin-top: 20px;
@@ -505,11 +496,11 @@ input:-webkit-autofill:focus {
 }
 
 #selected-plan-items {
-  display: contents; /* Дочерние элементы становятся частью Grid */
+  display: contents; 
 }
 
 .plan-row {
-  display: contents; /* Важно для правильного размещения в Grid */
+  display: contents; 
 }
 
 .plan-name,
