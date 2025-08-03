@@ -18,7 +18,7 @@
 html,
 body {
   overflow: auto;
-  height: 100%;
+  height: auto;
 }
 html {
   box-sizing: border-box;
@@ -243,7 +243,7 @@ input:-webkit-autofill:focus {
   justify-content: center;
   background-color: var(--marine-blue);
   color: var(--white);
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   transition: opacity 450ms ease;
   &:hover {
@@ -541,7 +541,7 @@ input:-webkit-autofill:focus {
 .total-price {
   font-weight: 600;
   font-size: 18px;
-  color: var(--marine-blue);
+  color: var(--purplish-blue);
 }
 /* Thank you */
 .card__block-tanks {
@@ -604,18 +604,16 @@ input:-webkit-autofill:focus {
 
   .card__right {
     top: -72px;
-    /* height: 100%; */
   }
   .card__block {
+    min-height: 100vh;
     padding-block-start: 0;
-    border-radius: 10px;
-  }
-  .card__right .card__block-active {
-    /* justify-content: space-between; */
   }
   .card__block-title {
     background: var(--white);
     padding: 22px 24px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
   .card__block-title .card__title {
     font-size: 24px;
@@ -627,13 +625,8 @@ input:-webkit-autofill:focus {
   }
   form {
     padding-inline: 24px;
-  }
-  form,
-  .card__plan,
-  .card__add,
-  .card__summary-wrapper:has(.card__block) {
-    height: 100%;
-    flex: 1 0 auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
   .input__fields {
     margin-block-end: 16px;
@@ -644,7 +637,7 @@ input:-webkit-autofill:focus {
     width: 100%;
   }
   .buttons__card {
-    flex: 0 0 auto;
+    margin-block-start: auto;
     background: var(--white);
     height: 72px;
     padding-inline: 16px;
